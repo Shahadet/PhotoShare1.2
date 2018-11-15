@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        var ref: DatabaseReference!
+        ref = Database.database().reference(fromURL: "https://photoshare-dsi.firebaseio.com/")
+        ref.updateChildValues(["Some value":1278])
+        
     }
 
 
